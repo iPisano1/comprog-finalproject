@@ -1,0 +1,326 @@
+#include <stdio.h>
+
+char playername[25];
+
+int main() {
+    
+    char playchoice;
+    
+    printf("----------------------QUIZTIME----------------------\n");
+    
+    printf("Enter Name: ");
+    scanf("%s", &playername);
+    
+    printf("-----------------------------------------------\n");
+    
+    printf("Hello %s Welcome to QUIZTIME\n", playername);
+    printf("Do You Want to Play a Game? ( Y | N )\n");
+    scanf("%s", &playchoice);
+
+    if(playchoice == 'Y' || playchoice == 'y'){
+        printf("Playing...\n");
+        playgame();
+    }
+    else if(playchoice == 'N' || playchoice == 'n'){
+        printf("See You Again %s....", playername);
+    }
+    return 0;
+}
+
+int playgame(){
+    int genre;
+    
+    printf("\n----------------------Select Genre----------------------\n");
+    printf("1. History\n");
+    printf("2. Science\n");
+    printf("3. Movies\n");
+
+    printf("Select Genre: ");
+    scanf("%d", &genre);
+    
+    switch(genre){
+        case 1:
+            historygame();
+        break;
+        case 2:
+            sciencegame();
+        break;
+        case 3:
+            moviegame();
+        break;
+        default:
+            printf("You Entered A Wrong Genre\n");
+            playgame();
+        ;
+    }
+}
+
+int historygame(){
+    
+    int answer;
+    int score = 0;
+    char repeat;
+        
+    printf("\n----------------------HISTORY----------------------\n");
+    printf("Question #1: Where did the Olympic Games originate?\n");
+    printf("1. America\n");
+    printf("2. Greece\n");
+    printf("3. Japan\n");
+    printf("4. Italy\n");
+    
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 2){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #2: In which year did World War I begin?\n");
+    printf("1. 1923\n");
+    printf("2. 1941\n");
+    printf("3. 1917\n");
+    printf("4. 1914\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 4){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #3: Where was John F. Kennedy assassinated?\n");
+    printf("1. New York\n");
+    printf("2. Dallas\n");
+    printf("3. Miami\n");
+    printf("4. Washington\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 2){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #4: Which general famously stated, 'I shall return?'\n");
+    printf("1. Bull Halsey\n");
+    printf("2. George Patton\n");
+    printf("3. Douglas MacArthur\n");
+    printf("4. Omar Bradley\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 3){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #5: Who discovered the Philippines'\n");
+    printf("1. Philip II\n");
+    printf("2. Douglas MacArthur\n");
+    printf("3. Lapu-Lapu\n");
+    printf("4. Ferdinand Magellan\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 4){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nYour Score is %d/5\n", score);
+    
+    printf("Do You Still Want To Play?( Y | N )\n");
+    scanf("%s", &repeat);
+    
+    if(repeat == 'Y'){
+        playgame();
+    }
+    else{
+        printf("See You Again %s....", playername);
+    }
+}
+
+int sciencegame(){
+       
+    int answer;
+    int score = 0;
+    char repeat;
+        
+    printf("\n----------------------SCIENCE----------------------\n");
+    printf("Question #1: What does DNA stand for?\n");
+    printf("1. Dinitronucleic acid\n");
+    printf("2. Dinucleic acid\n");
+    printf("3. Deoxynitrogenous acid\n");
+    printf("4. Deoxyribonucleic acid\n");
+    
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 4){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #2: How many bones are in the human body?\n");
+    printf("1. 206\n");
+    printf("2. 182\n");
+    printf("3. 226\n");
+    printf("4. 188\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 1){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #3: The concept of gravity was discovered by which famous physicist?\n");
+    printf("1. Isaac Newton\n");
+    printf("2. Albert Einstein\n");
+    printf("3. Galileo Galilei\n");
+    printf("4. Charles Darwin\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 1){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #4: What is the hardest natural substance on Earth?'\n");
+    printf("1. Emerald\n");
+    printf("2. Gold\n");
+    printf("3. Diamond\n");
+    printf("4. Iron\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 3){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #5: What is the biggest planet in our solar system?'\n");
+    printf("1. Uranus\n");
+    printf("2. Jupiter\n");
+    printf("3. Saturn\n");
+    printf("4. Mercury\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 2){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nYour Score is %d/5\n", score);
+    
+    printf("Do You Still Want To Play?( Y | N )\n");
+    scanf("%s", &repeat);
+    
+    if(repeat == 'Y'){
+        playgame();
+    }
+    else{
+        printf("See You Again %s....", playername);
+    }
+}
+
+int moviegame(){
+       
+    int answer;
+    int score = 0;
+    char repeat;
+        
+    printf("\n----------------------MOVIE----------------------\n");
+    printf("Question #1: What did Marlon Brando have `Paris`, in his X-rated film?\n");
+    printf("1. Last Goodbye\n");
+    printf("2. April\n");
+    printf("3. Last Tango\n");
+    printf("4. Last Waltz\n");
+    
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 3){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #2: Which film won the Oscar for Best Picture in 1972?\n");
+    printf("1. Deliverance\n");
+    printf("2. Cabaret\n");
+    printf("3. Taxi Driver\n");
+    printf("4. The Godfather\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 4){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #3: What world-famous movie monster turned 50 in 2005?\n");
+    printf("1. Frankenstein\n");
+    printf("2. King Kong\n");
+    printf("3. Monthra\n");
+    printf("4. Godzilla\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 4){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #4: What film had its first private screening at the 39 room hotel Melhana Plantation in Georgia?'\n");
+    printf("1. Psycho\n");
+    printf("2. The Godfather\n");
+    printf("3. From Here to Eternity\n");
+    printf("4. Gone With The Wind\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 4){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nQuestion #5: Jack and Rose are the main characters from which film?'\n");
+    printf("1. Lost in Translation\n");
+    printf("2. The Titanic\n");
+    printf("3. Punch-Drunk Love\n");
+    printf("4. The Way We Were\n");
+
+    printf("Answer: ");
+    scanf("%d", &answer);
+    
+    if(answer == 2){
+        score += 1;
+        answer = 0;
+    }
+    
+    printf("\nYour Score is %d/5\n", score);
+    
+    printf("Do You Still Want To Play?( Y | N )\n");
+    scanf("%s", &repeat);
+    
+    if(repeat == 'Y'){
+        playgame();
+    }
+    else{
+        printf("See You Again %s....", playername);
+    }
+}
